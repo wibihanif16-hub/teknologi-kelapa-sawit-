@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSawit - Teknologi Budidaya & SOP Pemanenan Kelapa Sawit</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        sawit: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        amberpalm: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sawit-700 to-amberpalm-500 flex items-center justify-center text-white shadow-md">
+                        <i class="fa-solid fa-seedling text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl text-sawit-900 tracking-tight">Edu<span class="text-amberpalm-600">Sawit</span></span>
+                        <p class="text-[10px] text-gray-500 font-medium tracking-wide uppercase">Pusat Teknologi & Budidaya</p>
+                    </div>
+                </div>
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600">
+                    <a href="#beranda" class="hover:text-sawit-700 transition">Beranda</a>
+                    <a href="#tentang" class="hover:text-sawit-700 transition">Tentang Sawit</a>
+                    <a href="#kriteria" class="hover:text-sawit-700 transition">Kriteria Matang</a>
+                    <a href="#sop" class="text-sawit-700 transition font-bold">SOP Pemanenan</a>
+                    <a href="#alat-k3" class="hover:text-sawit-700 transition">Alat & K3</a>
+                    <a href="#kuis" class="hover:text-sawit-700 transition">Uji Pemahaman</a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-sawit-700 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-4 space-y-2">
+            <a href="#beranda" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-sawit-50 hover:text-sawit-700">Beranda</a>
+            <a href="#tentang" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-sawit-50 hover:text-sawit-700">Tentang Sawit</a>
+            <a href="#kriteria" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-sawit-50 hover:text-sawit-700">Kriteria Matang</a>
+            <a href="#sop" class="block px-3 py-2 rounded-md text-base font-medium text-sawit-700 bg-sawit-50 font-bold">SOP Pemanenan</a>
+            <a href="#alat-k3" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-sawit-50 hover:text-sawit-700">Alat & K3</a>
+            <a href="#kuis" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-sawit-50 hover:text-sawit-700">Uji Pemahaman</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative bg-gradient-to-br from-sawit-900 via-sawit-800 to-sawit-950 text-white py-20 lg:py-28 overflow-hidden">
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center space-x-2 bg-sawit-800/80 border border-sawit-600/50 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full shadow-inner">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>Modul Pendidikan Resmi Perkebunan Sawit</span>
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Teknologi Budidaya & <span class="text-amberpalm-500">SOP Pemanenan</span> Kelapa Sawit
+                    </h1>
+                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Pelajari standar operasional prosedur (SOP) agronomis modern mulai dari kriteria matang buah, teknik panen yang tepat, hingga penanganan pasca panen untuk memaksimalkan rendemen minyak (CPO).
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#sop" class="inline-flex items-center justify-center bg-amberpalm-500 hover:bg-amberpalm-600 text-gray-950 font-bold px-6 py-3.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-clipboard-check mr-2"></i> Pelajari SOP Panen
+                        </a>
+                        <a href="#kriteria" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/25 text-white font-semibold px-6 py-3.5 rounded-xl backdrop-blur-sm transition border border-white/20">
+                            <i class="fa-solid fa-apple-whole mr-2"></i> Kriteria Matang Buah
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 shadow-2xl space-y-4">
+                        <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                            <span class="text-sm font-semibold text-emerald-300">Statistik Budidaya Utama</span>
+                            <span class="bg-amberpalm-500 text-gray-950 text-xs px-2 py-0.5 rounded font-bold">Standard ISO</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-black/20 p-4 rounded-2xl text-center">
+                                <span class="block text-2xl font-black text-amberpalm-500">30 - 36</span>
+                                <span class="text-xs text-gray-300">Bulan TBM ke TM</span>
+                            </div>
+                            <div class="bg-black/20 p-4 rounded-2xl text-center">
+                                <span class="block text-2xl font-black text-emerald-400">10 - 14</span>
+                                <span class="text-xs text-gray-300">Hari Rotasi Panen</span>
+                            </div>
+                            <div class="bg-black/20 p-4 rounded-2xl text-center">
+                                <span class="block text-2xl font-black text-emerald-400">5 - 7</span>
+                                <span class="text-xs text-gray-300">Pelepah Pelihara</span>
+                            </div>
+                            <div class="bg-black/20 p-4 rounded-2xl text-center">
+                                <span class="block text-2xl font-black text-amberpalm-500">&gt; 22%</span>
+                                <span class="text-xs text-gray-300">Target Rendemen CPO</span>
+                            </div>
+                        </div>
+                        <div class="pt-2 text-center text-xs text-gray-400 italic">
+                            *Parameter standar agronomis kelapa sawit produktif.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Tentang & Informasi Umum -->
+    <section id="tentang" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-sawit-600 mb-2">Informasi Umum</h2>
+                <h3 class="text-3xl font-extrabold text-gray-900 tracking-tight">Teknologi Budidaya Kelapa Sawit (Elaeis guineensis)</h3>
+                <p class="mt-3 text-gray-600">Keberhasilan kebun kelapa sawit sangat ditentukan oleh teknik budidaya yang presisi dari fase pembibitan, perawatan tanaman menghasilkan (TM), hingga proses pemanenan Tandan Buah Segar (TBS).</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-sawit-50/50 border border-sawit-100 p-6 rounded-2xl transition hover:shadow-lg">
+                    <div class="w-12 h-12 bg-sawit-600 text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow-md">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-sawit-900 mb-2">Pembibitan & TBM</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Fase pembibitan dua tahap (Pre-Nursery & Main Nursery) serta Tanaman Belum Menghasilkan (TBM) umur 1-3 tahun memerlukan pemeliharaan gulma dan pemupukan intensif.
+                    </p>
+                </div>
+                <div class="bg-sawit-50/50 border border-sawit-100 p-6 rounded-2xl transition hover:shadow-lg">
+                    <div class="w-12 h-12 bg-amberpalm-600 text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow-md">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-sawit-900 mb-2">Tanaman Menghasilkan (TM)</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Tanaman berumur di atas 3 tahun yang sudah mulai berbuah. Pengelolaan kastrasi, sanitasi pelepah, dan kastrasi buah pasir sangat menentukan produktivitas jangka panjang.
+                    </p>
+                </div>
+                <div class="bg-sawit-50/50 border border-sawit-100 p-6 rounded-2xl transition hover:shadow-lg">
+                    <div class="w-12 h-12 bg-sawit-800 text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow-md">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-sawit-900 mb-2">Pemanenan Tepat Mutu</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Puncak siklus budidaya. Keterlambatan atau kesalahan teknik panen dapat menurunkan kadar minyak dan merusak kualitas inti sawit (kernel).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Kriteria Matang Panen -->
+    <section id="kriteria" class="py-16 bg-gray-100 border-t border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-amberpalm-600 mb-2">Indikator Kematangan</h2>
+                <h3 class="text-3xl font-extrabold text-gray-900 tracking-tight">Kriteria Matang Buah Sawit</h3>
+                <p class="mt-3 text-gray-600">Menentukan waktu panen yang tepat berdasarkan jumlah brondolan lepas dan warna kulit buah di pohon.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-bold mb-3">Derajat 0 (Mentah)</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Buah Hitam Keras</h4>
+                        <p class="text-sm text-gray-600">Warna buah masih hitam legam, belum ada brondolan yang lepas di piringan. Kandungan minyak sangat rendah.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-100 text-xs font-semibold text-red-600">
+                        <i class="fa-solid fa-circle-xmark mr-1"></i> Jangan Dipanen
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-bold mb-3">Derajat 1 (Kurang Matang)</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Brondolan 1-5 Butir</h4>
+                        <p class="text-sm text-gray-600">Mulai ada brondolan lepas di tanah/piringan sekitar 1 sampai 5 buah. Warna buah kemerahan.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-100 text-xs font-semibold text-amber-600">
+                        <i class="fa-solid fa-triangle-exclamation mr-1"></i> Tunda / Kondisional
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-sawit-600 flex flex-col justify-between shadow-md relative">
+                    <div class="absolute -top-3 right-4 bg-sawit-600 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Ideal Panen</div>
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-sawit-100 text-sawit-800 rounded-full text-xs font-bold mb-3">Derajat 2 (Matang Optimal)</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Brondolan 5+ / 25% Lepas</h4>
+                        <p class="text-sm text-gray-600">Brondolan lepas di piringan &gt; 5 butir atau sekitar 25-50% buah luar sudah brondol. Warna oranye kemerahan sempurna.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-100 text-xs font-bold text-sawit-700">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Wajib Dipanen
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-bold mb-3">Derajat 3 (Lewat Matang)</div>
+                        <h4 class="font-bold text-lg text-gray-900 mb-2">Buah Terlalu Masak</h4>
+                        <p class="text-sm text-gray-600">Sebagian besar buah telah brondol di pohon dan tanah. Asam lemak bebas (FFA) tinggi dan mudah rusak.</p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-100 text-xs font-semibold text-purple-600">
+                        <i class="fa-solid fa-clock-rotate-left mr-1"></i> Segera Panen
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: SOP Pemanenan Lengkap -->
+    <section id="sop" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-sawit-600 mb-2">Standar Operasional Prosedur</h2>
+                <h3 class="text-3xl font-extrabold text-gray-900 tracking-tight">SOP Tahapan Pemanenan Kelapa Sawit</h3>
+                <p class="mt-3 text-gray-600">Panduan teknis langkah demi langkah pelaksanaan panen TBS di lapangan untuk meminimalisir susut buah dan menjaga pohon tetap sehat.</p>
+            </div>
+
+            <!-- Tab / Stepper Navigation -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8" id="sop-tabs">
+                <button onclick="switchSopTab(1)" class="sop-tab-btn px-4 py-2 rounded-xl text-sm font-bold bg-sawit-600 text-white shadow-sm transition" data-tab="1">1. Persiapan Alat</button>
+                <button onclick="switchSopTab(2)" class="sop-tab-btn px-4 py-2 rounded-xl text-sm font-bold bg-gray-100 text-gray-700 hover:bg-gray-200 transition" data-tab="2">2. Tunas Pelepah</button>
+                <button onclick="switchSopTab(3)" class="sop-tab-btn px-4 py-2 rounded-xl text-sm font-bold bg-gray-100 text-gray-700 hover:bg-gray-200 transition" data-tab="3">3. Pemotongan TBS</button>
+                <button onclick="switchSopTab(4)" class="sop-tab-btn px-4 py-2 rounded-xl text-sm font-bold bg-gray-100 text-gray-700 hover:bg-gray-200 transition" data-tab="4">4. Pengutipan Brondolan</button>
+                <button onclick="switchSopTab(5)" class="sop-tab-btn px-4 py-2 rounded-xl text-sm font-bold bg-gray-100 text-gray-700 hover:bg-gray-200 transition" data-tab="5">5. Pengangkutan ke TPA</button>
+            </div>
+
+            <!-- Tab Content Container -->
+            <div class="bg-sawit-50 border border-sawit-100 rounded-3xl p-6 sm:p-10 shadow-sm max-w-4xl mx-auto">
+                
+                <!-- Step 1 -->
+                <div id="sop-content-1" class="sop-pane space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-sawit-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold">1</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Persiapan Alat dan Pemeriksaan Kesiapan Pemanen</h4>
+                            <p class="text-xs text-sawit-700 font-semibold uppercase tracking-wider">Tahap Pendahuluan</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700">
+                        <div class="space-y-3 bg-white p-5 rounded-2xl border border-gray-200">
+                            <h5 class="font-bold text-sawit-900 flex items-center"><i class="fa-solid fa-wrench text-sawit-600 mr-2"></i> Alat Utama & Penunjang:</h5>
+                            <ul class="list-disc list-inside space-y-1.5 text-gray-600">
+                                <li><strong>Dodos</strong> (untuk sawit TM umur muda / tinggi &lt; 2.5 meter).</li>
+                                <li><strong>Egrek</strong> (untuk sawit TM umur sedang/tinggi dengan tangkai galah aluminium/bambu).</li>
+                                <li><strong>Gancu / Parang</strong> (untuk memotong tangkai dan mengait buah).</li>
+                                <li><strong>Angkong / Sorong</strong> (untuk mengangkut TBS ke TPA).</li>
+                                <li>Batu asah untuk memastikan mata alat tajam sempurna.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-3 bg-white p-5 rounded-2xl border border-gray-200">
+                            <h5 class="font-bold text-sawit-900 flex items-center"><i class="fa-solid fa-triangle-exclamation text-amberpalm-600 mr-2"></i> Ketentuan Lapangan:</h5>
+                            <ul class="list-disc list-inside space-y-1.5 text-gray-600">
+                                <li>Pemanen wajib menggunakan Alat Pelindung Diri (APD) lengkap (Helm safety, sarung tangan, sepatu safety).</li>
+                                <li>Memastikan kebersihan dan ketajaman alat potong untuk menghindari buah memar atau tangkai terpotong panjang.</li>
+                                <li>Pengecekan rotasi panen sesuai jadwal blok (biasanya rotasi 7-10 hari).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div id="sop-content-2" class="sop-pane hidden space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-sawit-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold">2</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Penunasan Pelepah (Pruning) Penyangga Buah</h4>
+                            <p class="text-xs text-sawit-700 font-semibold uppercase tracking-wider">Standar Pemeliharaan Batang</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700">
+                        <div class="space-y-3 bg-white p-5 rounded-2xl border border-gray-200">
+                            <h5 class="font-bold text-sawit-900 flex items-center"><i class="fa-solid fa-scissors text-sawit-600 mr-2"></i> Aturan Pelepah (Catur Tunggal):</h5>
+                            <ul class="list-disc list-inside space-y-1.5 text-gray-600">
+                                <li>Pelepah yang berada tepat di bawah tandan buah matang harus ditunas (dipotong) untuk memudahkan akses pemotongan.</li>
+                                <li>Pertahankan jumlah pelepah pemeliharaan (menjaga pelepah penyangga daun ke-5 sampai ke-7 dari atas).</li>
+                                <li>Dilarang melakukan over-pruning (memotong terlalu banyak pelepah) karena akan menurunkan fotosintesis tanaman.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-3 bg-white p-5 rounded-2xl border border-gray-200">
+                            <h5 class="font-bold text-sawit-900 flex items-center"><i class="fa-solid fa-circle-check text-sawit-600 mr-2"></i> Teknik Pemotongan:</h5>
+                            <ul class="list-disc list-inside space-y-1.5 text-gray-600">
+                                <li>Pelepah dipotong mepet ke batang (menghasilkan "sodok" atau "meledar" yang rata) untuk mencegah kumbang tanduk bersarang.</li>
+                                <li>Pelepah yang telah dipotong disusun rapi di gawangan mati (jalan antar barisan).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div id="sop-content-3" class="sop-pane hidden space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-sawit-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold">3</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Teknik Pemotongan Tandan Buah Segar (TBS)</h4>
+                            <p class="text-xs text-sawit-700 font-semibold uppercase tracking-wider">Eksekusi Utama Panen</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700">
+                        <div class="space-y-3 bg-white p-5 rounded-2xl border border-gray-200">
+                            <h5 class="font-bold text-sawit-900 flex items-center"><i class="fa-solid fa-bullseye text-sawit-600 mr-2"></i> Potong Tangkai Bentuk Tapal Kuda:</h5>
+                            <ul class="list-disc list-inside space-y-1.5 text-gray-600">
+                                <li>Tangkai tandan dipotong sedekat mungkin dengan pangkal buah (maksimal panjang tangkai 2 cm atau bentuk V / tapal kuda).</li>
+                                <li>Dilarang memotong tangkai terlalu panjang ("gandar") karena merugikan pabrik dan mengurangi kuota berat bersih.</li>
+                                <li>Pastikan buah tidak membentur tanah saat dijatuhkan dari pohon tinggi (gunakan alas pelepah jika diperlukan).</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-3 bg-white p-5 rounded-2xl border border-gray-200">
+                            <h5 class="font-bold text-sawit-900 flex items-center"><i class="fa-solid fa-shield-halved text-sawit-600 mr-2"></i> Larangan Keras Agronomis:</h5>
+                            <ul class="list-disc list-inside space-y-1.5 text-gray-600">
+                                <li>Tidak boleh memanen buah mentah (Derajat 0).</li>
+                                <li>Tidak boleh memotong pelepah sehat yang tidak ada buah matang di atasnya.</li>
+                                <li>Hindari melukai batang kelapa sawit dengan egrek/dodos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div id="sop-content-4" class="sop-pane hidden space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-sawit-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold">4</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Pengutipan Brondolan & Pembersihan Piringan</h4>
+                            <p class="text-xs text-sawit-700 font-semibold uppercase tracking-wider">Optimasi Rendemen Minyak</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700">
+                        <div class="space-y-3 bg-white p-5 rounded-2xl border border-gray-200">
+                            <h5 class="font-bold text-sawit-900 flex items-center"><i class="fa-solid fa-hand-holding-droplet text-sawit-600 mr-2"></i> Wajib Kutip Bersih:</h5>
+                            <ul class="list-disc list-inside space-y-1.5 text-gray-600">
+                                <li>Semua brondolan yang lepas di piringan pohon, di ketiak pelepah, maupun di tanah wajib dikutip seluruhnya tanpa sisa.</li>
+                                <li>Brondolan memiliki kadar minyak tertinggi sehingga sangat menentukan nilai rendemen CPO dan asam lemak bebas.</li>
+                                <li>Brondolan dikumpulkan bersama tandannya atau dikelompokkan ke dalam karung/tempat khusus.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-3 bg-white p-5 rounded-2xl border border-gray-200">
+                            <h5 class="font-bold text-sawit-900 flex items-center"><i class="fa-solid fa-broom text-sawit-600 mr-2"></i> Sanitasi Piringan:</h5>
+                            <ul class="list-disc list-inside space-y-1.5 text-gray-600">
+                                <li>Pastikan area piringan bersih dari sampah potongan pelepah dan gulma agar memudahkan pengutipan pada rotasi panen berikutnya.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div id="sop-content-5" class="sop-pane hidden space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-sawit-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold">5</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">Pengangkutan ke TPA & Grading Mutu Buah</h4>
+                            <p class="text-xs text-sawit-700 font-semibold uppercase tracking-wider">Tahap Akhir Panen</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700">
+                        <div class="space-y-3 bg-white p-5 rounded-2xl border border-gray-200">
+                            <h5 class="font-bold text-sawit-900 flex items-center"><i class="fa-solid fa-truck-ramp-box text-sawit-600 mr-2"></i> Penumpukan di TPA (Tempat Pengumpulan Hasil):</h5>
+                            <ul class="list-disc list-inside space-y-1.5 text-gray-600">
+                                <li>TBS dan brondolan diangkut menggunakan angkong ke TPA tepi jalan utama kebun.</li>
+                                <li>Susun TBS dengan rapi di TPA berdasarkan nomor blok dan nomor mandor untuk memudahkan pencatatan tonase harian.</li>
+                                <li>Brondolan diletakkan dalam karung atau wadah bersih di dekat tumpukan TBS.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-3 bg-white p-5 rounded-2xl border border-gray-200">
+                            <h5 class="font-bold text-sawit-900 flex items-center"><i class="fa-solid fa-clipboard-list text-sawit-600 mr-2"></i> Grading di TPA:</h5>
+                            <ul class="list-disc list-inside space-y-1.5 text-gray-600">
+                                <li>Mandor panen atau petugas grading memeriksa mutu buah (apakah ada buah mentah, tangkai panjang, atau busuk).</li>
+                                <li>Buah dikirim ke Pabrik Kelapa Sawit (PKS) sesegera mungkin (maksimal 12-24 jam setelah dipotong) untuk mencegah kenaikan asam lemak bebas (FFA).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Alat & K3 (Keselamatan dan Kesehatan Kerja) -->
+    <section id="alat-k3" class="py-16 bg-gray-100 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-sawit-600 mb-2">Keamanan Kerja</h2>
+                <h3 class="text-3xl font-extrabold text-gray-900 tracking-tight">Alat Kerja & Standar K3 Pemanenan</h3>
+                <p class="mt-3 text-gray-600">Pekerjaan panen sawit melibatkan alat tajam dan beban berat. Penerapan K3 mutlak untuk mencegah kecelakaan kerja.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-sawit-100 text-sawit-700 rounded-2xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-hard-hat"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-gray-900 mb-2">Helm Safety & Pelindung Kepala</h4>
+                    <p class="text-sm text-gray-600">Melindungi kepala dari risiko jatuhnya pelepah tua, brondolan keras, atau tandan sawit dari ketinggian.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-sawit-100 text-sawit-700 rounded-2xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-shoe-prints"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-gray-900 mb-2">Sepatu Safety (Boots)</h4>
+                    <p class="text-sm text-gray-600">Melindungi kaki dari duri sawit yang tajam, gigitan hewan liar, serta benturan alat angkut.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-sawit-100 text-sawit-700 rounded-2xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-gray-900 mb-2">Sarung Tangan & Ergonomi</h4>
+                    <p class="text-sm text-gray-600">Sarung tangan tebal mencegah lecet saat memegang egrek tajam dan teknik mengangkat TBS ergonomis untuk mencegah cedera punggung.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Uji Pemahaman / Kuis Interaktif -->
+    <section id="kuis" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-amberpalm-600 mb-2">Evaluasi Belajar</h2>
+                <h3 class="text-3xl font-extrabold text-gray-900 tracking-tight">Uji Pemahaman SOP Pemanenan Sawit</h3>
+                <p class="mt-2 text-gray-600 text-sm">Jawab pertanyaan singkat di bawah ini untuk menguji sejauh mana pemahaman Anda.</p>
+            </div>
+
+            <div class="bg-sawit-50 border border-sawit-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6" id="quiz-box">
+                <div class="flex justify-between items-center border-b border-sawit-200 pb-4">
+                    <span id="quiz-progress" class="text-xs font-bold uppercase text-sawit-800 bg-sawit-200/60 px-3 py-1 rounded-full">Pertanyaan 1 dari 3</span>
+                    <span id="quiz-score" class="text-xs font-bold text-amberpalm-700">Skor: 0</span>
+                </div>
+
+                <div id="quiz-question-container" class="space-y-4">
+                    <h4 id="quiz-title" class="text-lg font-bold text-gray-900">1. Kapan waktu yang paling tepat untuk melakukan pemanenan Tandan Buah Segar (TBS) di pohon?</h4>
+                    <div id="quiz-options" class="space-y-3">
+                        <button onclick="checkAnswer(0)" class="quiz-opt w-full text-left p-4 rounded-xl bg-white border border-gray-200 hover:border-sawit-600 transition text-sm font-medium text-gray-700">A. Saat buah masih hitam legam dan keras.</button>
+                        <button onclick="checkAnswer(1)" class="quiz-opt w-full text-left p-4 rounded-xl bg-white border border-gray-200 hover:border-sawit-600 transition text-sm font-medium text-gray-700">B. Ketika sudah ada brondolan lepas di piringan sekitar 5 butir atau 25% buah luar lepas.</button>
+                        <button onclick="checkAnswer(2)" class="quiz-opt w-full text-left p-4 rounded-xl bg-white border border-gray-200 hover:border-sawit-600 transition text-sm font-medium text-gray-700">C. Menunggu sampai seluruh buah di tandan habis brondol sendiri di pohon.</button>
+                    </div>
+                </div>
+
+                <div id="quiz-feedback" class="hidden p-4 rounded-xl text-sm font-medium"></div>
+
+                <div class="flex justify-end">
+                    <button id="next-btn" onclick="nextQuestion()" class="hidden bg-sawit-700 hover:bg-sawit-800 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition">Pertanyaan Selanjutnya <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sawit-950 text-white py-12 mt-auto border-t border-sawit-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div class="space-y-3">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-amberpalm-500 flex items-center justify-center text-gray-950 font-bold">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <span class="font-extrabold text-lg tracking-tight">Edu<span class="text-amberpalm-500">Sawit</span></span>
+                </div>
+                <p class="text-xs text-gray-400 max-w-sm">
+                    Platform edukasi digital teknologi budidaya dan standar operasional prosedur kelapa sawit profesional untuk petani, mahasiswa, dan praktisi perkebunan.
+                </p>
+            </div>
+            <div class="text-sm text-gray-400 space-y-1 md:text-center">
+                <p class="font-semibold text-white">Topik Modul:</p>
+                <p>Pembibitan &bull; TBM &bull; TM &bull; SOP Panen &bull; K3 Perkebunan</p>
+            </div>
+            <div class="text-xs text-gray-400 md:text-right">
+                <p>&copy; 2026 EduSawit Indonesia. All rights reserved.</p>
+                <p class="mt-1 text-emerald-400">Standar Agronomi Kelapa Sawit Berkelanjutan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // SOP Tabs Logic
+        function switchSopTab(tabNumber) {
+            // Update buttons
+            const buttons = document.querySelectorAll('.sop-tab-btn');
+            buttons.forEach(btn => {
+                const bTab = btn.getAttribute('data-tab');
+                if(bTab == tabNumber) {
+                    btn.className = "sop-tab-btn px-4 py-2 rounded-xl text-sm font-bold bg-sawit-600 text-white shadow-sm transition";
+                } else {
+                    btn.className = "sop-tab-btn px-4 py-2 rounded-xl text-sm font-bold bg-gray-100 text-gray-700 hover:bg-gray-200 transition";
+                }
+            });
+
+            // Update Panes
+            const panes = document.querySelectorAll('.sop-pane');
+            panes.forEach(pane => {
+                pane.classList.add('hidden');
+            });
+            document.getElementById(`sop-content-${tabNumber}`).classList.remove('hidden');
+        }
+
+        // Quiz Logic
+        const quizData = [
+            {
+                question: "1. Kapan waktu yang paling tepat untuk melakukan pemanenan Tandan Buah Segar (TBS) di pohon?",
+                options: [
+                    "A. Saat buah masih hitam legam dan keras.",
+                    "B. Ketika sudah ada brondolan lepas di piringan sekitar 5 butir atau 25% buah luar lepas.",
+                    "C. Menunggu sampai seluruh buah di tandan habis brondol sendiri di pohon."
+                ],
+                correct: 1,
+                explanation: "Benar! Derajat matang optimal (Derajat 2) ditandai dengan brondolan lepas di piringan >= 5 butir atau sekitar 25% buah luar telah brondol untuk mendapatkan rendemen CPO maksimal."
+            },
+            {
+                question: "2. Bagaimana teknik pemotongan tangkai buah (gandar) yang sesuai dengan SOP panen?",
+                options: [
+                    "A. Tangkai dipotong sepanjang mungkin agar mudah dibawa.",
+                    "B. Tangkai dipotong mepet ke pangkal buah dengan bentuk tapal kuda (V) maksimal 2 cm.",
+                    "C. Dipotong dengan menyisakan separuh pelepah di tangkai."
+                ],
+                correct: 1,
+                explanation: "Benar! Tangkai harus dipotong pendek berbentuk tapal kuda atau huruf V maksimal 2 cm agar tidak merugikan pabrik dan memenuhi standar berat bersih."
+            },
+            {
+                question: "3. Mengapa pengutipan brondolan yang jatuh di piringan pohon sangat penting dalam SOP pemanenan?",
+                options: [
+                    "A. Karena brondolan memiliki kadar minyak tertinggi yang menentukan rendemen dan nilai mutu CPO.",
+                    "B. Hanya untuk merapikan kebun agar bersih dari sampah organik.",
+                    "C. Agar tidak dimakan oleh hewan pengerat di dalam kebun."
+                ],
+                correct: 0,
+                explanation: "Benar! Brondolan mengandung kadar minyak kelapa sawit paling tinggi. Ketinggalan brondolan akan langsung menurunkan nilai rendemen minyak dan meningkatkan kadar asam lemak bebas (FFA)."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function checkAnswer(selectedIndex) {
+            const q = quizData[currentQuestion];
+            const feedback = document.getElementById('quiz-feedback');
+            const nextBtn = document.getElementById('next-btn');
+            const options = document.querySelectorAll('.quiz-opt');
+
+            // Disable all options after click
+            options.forEach((opt, idx) => {
+                opt.disabled = true;
+                if(idx === q.correct) {
+                    opt.classList.add('bg-emerald-100', 'border-emerald-600', 'font-bold', 'text-emerald-900');
+                } else if(idx === selectedIndex) {
+                    opt.classList.add('bg-red-100', 'border-red-500', 'text-red-900');
+                }
+            });
+
+            feedback.classList.remove('hidden');
+            if(selectedIndex === q.correct) {
+                score += 10;
+                document.getElementById('quiz-score').innerText = `Skor: ${score}`;
+                feedback.className = "p-4 rounded-xl text-sm font-medium bg-emerald-100 text-emerald-800 border border-emerald-300";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-check mr-1"></i> <strong>Jawaban Anda Benar!</strong> ${q.explanation}`;
+            } else {
+                feedback.className = "p-4 rounded-xl text-sm font-medium bg-amber-100 text-amber-800 border border-amber-300";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-xmark mr-1"></i> <strong>Jawaban Kurang Tepat.</strong> ${q.explanation}`;
+            }
+
+            if(currentQuestion < quizData.length - 1) {
+                nextBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                nextBtn.innerHTML = `Selesai <i class="fa-solid fa-flag-checkered ml-1"></i>`;
+                nextBtn.onclick = resetQuiz;
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if(currentQuestion < quizData.length) {
+                const q = quizData[currentQuestion];
+                document.getElementById('quiz-progress').innerText = `Pertanyaan ${currentQuestion + 1} dari ${quizData.length}`;
+                document.getElementById('quiz-title').innerText = q.question;
+                
+                const optContainer = document.getElementById('quiz-options');
+                optContainer.innerHTML = '';
+                q.options.forEach((optText, idx) => {
+                    const btn = document.createElement('button');
+                    btn.onclick = () => checkAnswer(idx);
+                    btn.className = "quiz-opt w-full text-left p-4 rounded-xl bg-white border border-gray-200 hover:border-sawit-600 transition text-sm font-medium text-gray-700";
+                    btn.innerText = optText;
+                    optContainer.appendChild(btn);
+                });
+
+                document.getElementById('quiz-feedback').classList.add('hidden');
+                document.getElementById('next-btn').classList.add('hidden');
+            }
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-score').innerText = `Skor: 0`;
+            const q = quizData[0];
+            document.getElementById('quiz-progress').innerText = `Pertanyaan 1 dari ${quizData.length}`;
+            document.getElementById('quiz-title').innerText = q.question;
+            
+            const optContainer = document.getElementById('quiz-options');
+            optContainer.innerHTML = '';
+            q.options.forEach((optText, idx) => {
+                const btn = document.createElement('button');
+                btn.onclick = () => checkAnswer(idx);
+                btn.className = "quiz-opt w-full text-left p-4 rounded-xl bg-white border border-gray-200 hover:border-sawit-600 transition text-sm font-medium text-gray-700";
+                btn.innerText = optText;
+                optContainer.appendChild(btn);
+            });
+
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.classList.add('hidden');
+            nextBtn.innerHTML = `Pertanyaan Selanjutnya <i class="fa-solid fa-arrow-right ml-1"></i>`;
+            nextBtn.onclick = nextQuestion;
+        }
+    </script>
+</body>
+</html>
